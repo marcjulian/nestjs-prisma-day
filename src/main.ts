@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const options = new DocumentBuilder()
-    .setTitle('NestJS Prisma Day')
+    .setTitle('Prisma Day 2020')
     .setDescription('The NestJS Prisma Day API description')
     .setVersion('1.0')
     .addTag('prisma')
