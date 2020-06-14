@@ -1,0 +1,11 @@
+query {
+  conferences {
+    ...Conference
+  }
+}
+
+fragment Conference on Conference {
+  id
+  name
+  url
+}

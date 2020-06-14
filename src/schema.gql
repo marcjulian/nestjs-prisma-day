@@ -1,0 +1,23 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Conference {
+  id: Int!
+  name: String!
+  url: String!
+  startDate: DateTime!
+  endDate: DateTime!
+  city: String!
+  country: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  helloWorld: String!
+  conferences: [Conference!]!
+}
