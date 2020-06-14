@@ -1,5 +1,5 @@
 import { Conference } from './models/conference.model';
-import { Resolver, Query } from '@nestjs/graphql';
+import { Resolver, Query, Args } from '@nestjs/graphql';
 import { AppService } from 'src/app.service';
 import { PrismaService } from 'src/prisma/prisma.service';
 
@@ -18,5 +18,10 @@ export class ConferenceResolver {
   @Query(returns => [Conference])
   async conferences(): Promise<Conference[]> {
     return this.prismaService.conference.findMany();
+  }
+
+  @Query(returns => Conference)
+  async conference(@Args('id') id: number): Promise<Conference> {
+    return this.prismaService.conference.findOne({ where: { id } });
   }
 }

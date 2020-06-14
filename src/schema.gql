@@ -20,4 +20,5 @@ scalar DateTime
 type Query {
   helloWorld: String!
   conferences: [Conference!]!
+  conference(id: Float!): Conference!
 }

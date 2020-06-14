@@ -8,9 +8,18 @@ query Conferences {
   }
 }
 
+query Conference {
+  conference(id: 1) {
+    ...Conference
+  }
+}
+
 fragment Conference on Conference {
   id
   name
   url
   startDate
+  endDate
+  city
+  country
 }
