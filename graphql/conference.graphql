@@ -1,4 +1,8 @@
-query {
+query HelloWorld {
+  helloWorld
+}
+
+query Conferences {
   conferences {
     ...Conference
   }
@@ -8,4 +12,5 @@ fragment Conference on Conference {
   id
   name
   url
+  startDate
 }

@@ -5,6 +5,7 @@ import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 export class PrismaService extends PrismaClient
   implements OnModuleInit, OnModuleDestroy {
   constructor() {
+    // configure datasources, errorFormat, log,
     super();
   }
 
