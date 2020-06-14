@@ -1,10 +1,14 @@
 import { Conference } from './models/conference.model';
 import { Resolver, Query } from '@nestjs/graphql';
 import { AppService } from 'src/app.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Resolver(of => Conference)
 export class ConferenceResolver {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private readonly prismaService: PrismaService,
+  ) {}
 
   @Query(returns => String)
   helloWorld() {
@@ -12,7 +16,7 @@ export class ConferenceResolver {
   }
 
   @Query(returns => [Conference])
-  async conferences() {
-    return [];
+  async conferences(): Promise<Conference[]> {
+    return this.prismaService.conference.findMany();
   }
 }
