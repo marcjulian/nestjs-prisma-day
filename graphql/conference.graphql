@@ -9,7 +9,7 @@ query Conferences {
 }
 
 query Conference {
-  conference(id: 1) {
+  conference(id: 2) {
     ...Conference
   }
 }
